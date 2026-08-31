@@ -94,6 +94,14 @@ The 120-question Irish-language factual QA benchmark used across all LLM evaluat
 
 ---
 
+**`Added Morphological_Normalisation.ipynb – Section 4.5/Chapter 4`**
+
+Question addressed: Does normalising test–set token surface forms back to their canonical form before KG lookup close the coverage gap identified in the July rerun?
+
+Approach: This is an inference–time intervention only. No retraining. We use the existing July rerun checkpoints and the existing morph pipeline lookup tables (logainm_lookup.pkl, ud_lookup.pkl) in reverse – as surface→canonical maps – to ask: if we could match mutated test tokens to their KG entries, how much coverage would we recover?
+
+---
+
 ## Reproducibility note
 
 The following components are re-executable given the dependencies listed below: the entity vocabulary extraction script, the morphological pipeline (morph_pipeline.py and morphology-pipeline.ipynb), the statistical analysis notebook, the XAI notebook, and the LLM evaluation conditions (given an Anthropic API key).
